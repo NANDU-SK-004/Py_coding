@@ -2,12 +2,10 @@ def func(index ,sum ,subset):
     if sum == target:
         final.append(subset.copy())
         return
-    if sum >target :
-        
+    elif sum >target :
         return
     if index >= len(nums):
         return
-    
     subset.append(nums[index])
     total=sum+nums[index]
     

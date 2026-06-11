@@ -1,5 +1,3 @@
-
-
 def func(index ,subset):
     if index >= len(nums):
         result.append(subset.copy())
