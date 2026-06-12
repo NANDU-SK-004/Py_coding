@@ -15,12 +15,6 @@ def back(index ,total ,subset ,count):
     back( index+1 ,sum ,subset ,count)
         
 
-
-
-
-
-
-
 size =3
 nums = [1,2,3,4,5,6,7,8,9]
 set=[]
