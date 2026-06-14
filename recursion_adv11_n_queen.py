@@ -4,18 +4,14 @@ def solve( col, board, ans, leftrow, upperDiagonal, lowerDiagonal, n):
             return
 
         for row in range(n):
-            if (
-                leftrow[row] == 0
-                and lowerDiagonal[row + col] == 0
-                and upperDiagonal[n - 1 + col - row] == 0
-            ):
+            if (leftrow[row] == 0 and lowerDiagonal[row + col] == 0 and upperDiagonal[n - 1 + col - row] == 0):
+                
                 board[row] = board[row][:col] + "Q" + board[row][col + 1 :]
                 leftrow[row] = 1
                 lowerDiagonal[row + col] = 1
                 upperDiagonal[n - 1 + col - row] = 1
-                solve(
-                    col + 1, board, ans, leftrow, upperDiagonal, lowerDiagonal, n
-                )
+                
+                solve(col + 1, board, ans, leftrow, upperDiagonal, lowerDiagonal, n)
                 board[row] = board[row][:col] + "." + board[row][col + 1 :]
                 leftrow[row] = 0
                 lowerDiagonal[row + col] = 0
