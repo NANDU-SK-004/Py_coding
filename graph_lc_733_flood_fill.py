@@ -21,6 +21,8 @@ class Solution:
         if image[sr][sc] == color:
             return image
             
+
+            
         visited = deepcopy(image)
         rows = len(visited)
         cols = len(visited[0])
