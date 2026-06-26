@@ -1,0 +1,29 @@
+class Solution:
+    def canPartition(self, nums: List[int]) -> bool:
+
+        total = sum(nums)
+
+        if total % 2 != 0:
+            return False
+
+        target = total // 2
+        memo = {}
+
+        def solve(index, target):
+
+            if target == 0:
+                return True
+
+            if index == len(nums) or target < 0:
+                return False
+
+            if (index, target) in memo:
+                return memo[(index, target)]
+
+            pick = solve(index + 1, target - nums[index])
+            not_pick = solve(index + 1, target)
+
+            memo[(index, target)] = pick or not_pick
+            return memo[(index, target)]
+
+        return solve(0, target)
